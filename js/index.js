@@ -6,12 +6,14 @@ $('nav a').on('click', function(e) {                 // User clicks nav link
   $(this).addClass('current');                       // New current indicator
 
   $('#content').remove(); 
+  $('#container').load(url + " #content").hide().fadeIn('slow');
+
   if (url.slice(-13) == "practice.html") {
-  	$('#container').load(url).hide().fadeIn('slow');
+    $.getScript("js/practice.js");
+  } else if (url.slice(-16) == "certificate.html") {
+    $.getScript("js/certificate.js");
+    $.getScript("https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js");
   } else {
-  	$('#container').load(url + " #content", function() {
   		$.getScript("js/repeatPictures.js");
-  		console.log("got repeatPictures.js");
-  	}).hide().fadeIn('slow');
   }
 });

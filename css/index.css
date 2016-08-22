@@ -50,9 +50,10 @@ nav {
 	margin: 0px;
 	padding: 0px;
 }
-#penny, #stack, #bill-example {
+.middle {
 	display: block;
 	margin:5px auto 5px auto;
+	text-align: center;
 }
 .tooltip {
     position: relative;
@@ -61,7 +62,7 @@ nav {
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
+    display: none;
 	width: 120px;
     background-color: black;
     color: #fff;
@@ -77,26 +78,70 @@ nav {
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    display:inline;
 }
 
-img :not(#stack) {
-	max-width: 100px;
-	max-height: 100px;
-	margin: 0px;
+img {
+	vertical-align: middle;
+
+}
+input[type="submit"], button {
+	background-color: gray;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
 }
 
-#example {
-	display: block;
-	margin: auto;
+#final-question img {
+    margin: 2px 0px;
 }
 
+#bill-certificate {
+    height: 25%;
+    width: 25%;
+}
+
+#certificate-name {
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+#print {
+    position: relative;
+    max-width: 100%;
+}
+
+#print img {
+    max-width: 100%;
+}
+
+#user-name {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 400px;
+    height: 30px;
+    margin-left: -200px;
+    color: red;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+
+input[type="submit"]:hover, button:hover {
+    transition-duration: 0.4s;
+    background-color: white;
+    color: gray;
+}
 
 @media screen and (max-width: 480px) {
-    img not:(#stack, .times500) {
-        height: 20%;
-        width: 20%;
-    }
     nav a {
     	font-size: 17px;
     	width: 30%;
@@ -104,14 +149,66 @@ img :not(#stack) {
     #email {
     	display: none;
     }
-    #example {
+
+    .middle:not(#stack):not(#ironman):not(#certificate):not(#user-name) {
     	width: 30%;
     	height: 30%;
     }
+    div[id^="question"] div[class="middle"] {
+    	height: auto !important;
+    	width: auto !important;
+    }
+
     #bill-example{
-    	width: 90%;
-    	height: 36%; /* Height / width ration of 1: 2.5 */
-    	display: block;
-    	margin: auto;
+    	width: 90% !important;
+    	height: 36% !important; /* Height / width ration of 1: 2.5 */
+    }
+
+    #bill-certificate {
+    height: 35%;
+    width: 35%;
+    }
+
+    #certificate-name {
+        width: 90%;
+    }
+    #user-name {
+        top: 38%;
+        left: 50%;
+        height: 28px;
+        width: 180px;
+        margin-left: -90px;
+        font-size: 0.5em;
+    }
+}
+
+@media print {
+    @page {size: landscape}
+
+
+    #print, #print * {
+    visibility: visible;
+    }
+    #print {
+    position: relative;
+    }
+    #print span {
+    left: 50%;
+    margin-left: -200px;
+    }
+    #final-question {
+    display: none;
+    }
+    nav {
+    display: none;
+    }
+    p {
+    display: none;
+    }
+    img:not(#certificate) {
+    display: none;
+    }
+    header, label, input, button, hr {
+    display: none;
     }
 }

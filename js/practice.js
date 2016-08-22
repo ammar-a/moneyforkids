@@ -1,31 +1,46 @@
 $( function()  {
 	//Build the spinners
-	spinners = [1,'2p', '2q',3,4]; 
-	for (var i = 0; i < 5; i++) {
-		$("#spinner"+spinners[i]).spinner();
+	inputs = ['#spinner1','#spinner2p', '#spinner2q','#spinner3d','#spinner4n', '#spinner4l', '#spinner5n']; 
+	spinners = [];
+	for (var i = 0; i < inputs.length; i++) {
+		spinners[i] = $(inputs[i]).spinner();
 	}
 
 	$(':submit').on('click', function(e) {
 		e.preventDefault();
 		var id = this.id;
-		console.log(id);
 		if (id == "submit1") {
-			var spinner1 = $( "#spinner1" ).spinner();
-			if (spinner1.spinner("value") == 7) {
+			if (spinners[0].spinner("value") == 7) {
 				respone('correct', id);
 			}
 			else {
 				respone('incorrect', id)
 			}
 		} else if (id == "submit2") {
-			var spinner2p = $( "#spinner2p" ).spinner();
-			var spinner2q = $( "#spinner2q" ).spinner();
-			if (spinner2p.spinner("value") + spinner2q.spinner("value") * 25 == 27) {
+			if (spinners[1].spinner("value") + spinners[2].spinner("value") * 25 == 27) {
 				respone('correct', id);
 			} else {
 				respone('incorrect', id)	
-				console.log(spinner2p.spinner("value") + spinner2q.spinner("value") * 25);
 			}
+		} else if (id == "submit3") {
+			if (spinners[3].spinner("value") * 10 == 70) {
+				respone('correct', id);
+			} else {
+				respone('incorrect', id)	
+			}
+		} else if (id == "submit4") {			
+			if (spinners[5].spinner("value") * 100 + spinners[4].spinner("value") * 5 == 105 ) {
+				respone('correct', id);
+			} else {
+				respone('incorrect', id)	
+			}
+		} else if (id == "submit5") {
+			if (spinners[6].spinner("value") * 5 == 10 ) {
+				respone('correct', id);
+			} else {
+				respone('incorrect', id)	
+			}
+			window.scrollTo(0,document.body.scrollHeight);
 		}
 	})
 

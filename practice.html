@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Learn Money 4 Kids! 	&#127809;</title>
+		<title>Learn Money For Kids! &#127809;</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A website to help kids learn about money!">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -10,7 +11,7 @@
 	</head>
 	<body>
 		<header>	
-			<a id="logo" href="#">Money4Kids 	&#127809; &copy;</a>
+			<a id="logo" href="#">MoneyForKids 	&#127809; &copy;</a>
 			<a id="email" href="mailto:ammar.akhtar.01@gmail.com">Feedback</a>
 		</header>
 		<nav>
@@ -21,44 +22,73 @@
 		<section id="container">
 		<div id="content"><!--legend for variables, p = penny, d = dime, q = quarter and so on-->
 			<div id="question1">
+				<img src="assets/candy.png" alt="candy" height="10%" width="10%" class="middle">
 				<p>This candy costs 7 cents. How many cents do you need to pay for it?</p>
-				<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
-				X
-				<input type="text" id="spinner1" name="spinner1" size="1" max="10" min="1" />
-				<input type="submit" name="answer" id="submit1">
+				<div class="middle">
+					<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
+					X
+					<input type="text" id="spinner1" name="spinner1" size="1" max="100" min="1" />
+					<br>
+					<input type="submit" value="Submit" name="answer" id="submit1">
+				</div>
 			</div>
-
+			<hr>
 			<div id="question2">
-				<p>This candy costs 27 cents. How can you pay for it?</p>
-				<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
-				X
-				<input type="text" id="spinner2p" name="spinner2p" size="1" max="10" min="1" />
-				<br />
-				<img src="assets/quarter.png"   alt="1 cent coin"  align="middle" id="calc-image">
-				X
-				<input type="text" id="spinner2q" name="spinner2q" size="1" max="10" min="1" />
-				<input type="submit" name="answer" id="submit2">
+				<img src="assets/batman.png" alt="candy" height="10%" width="10%" class="middle">
+				<p>This batman sticker costs 27 cents. How can you pay for it?</p>
+				<div class="middle">
+					<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
+					X
+					<input type="text" id="spinner2p" name="spinner2p" size="1" max="100" min="1" />
+					<br />
+					<img src="assets/quarter.png"   alt="1 cent coin"  align="middle" id="calc-image">
+					X
+					<input type="text" id="spinner2q" name="spinner2q" size="1" max="5"0 min="1" />
+					<br>
+					<input type="submit" value="Submit" name="answer" id="submit2">
+				</div>
 			</div>
-
+			<hr>
 			<div id="question3">
-				<p>This candy costs 7 cents. How many cents do you need to pay for it?</p>
-				<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
-				X
-				<input type="text" id="spinner3" name="spinner3" size="1" max="10" min="1" />
-				<input type="submit" name="answer" id="submit">
+				<img src="assets/pencil.png" alt="A cool pencil" height="10%" width="10%" class="middle">
+				<p>This cool pencil costs 70 cents. How many dimes do you need to pay for it?</p>
+				<div class="middle">
+					<img src="assets/dime.png"   alt="a dime"  align="middle" id="calc-image">
+					X
+					<input type="text" id="spinner3d" name="spinner3d" size="1" max="100" min="1" />
+					<br>
+					<input type="submit" value="Submit" name="answer" id="submit3">
+				</div>
 			</div>
-
+			<hr>
 			<div id="question4">
-				<p>This candy costs 7 cents. How many cents do you need to pay for it?</p>
-				<img src="assets/penny.png"   alt="1 cent coin"  align="middle" id="calc-image">
-				X
-				<input type="text" id="spinner4" name="spinner4" size="1" max="10" min="1" />
-				<input type="submit" name="answer" id="submit">
+				<img src="assets/soccerball.png" alt="A soccer ball" height="10%" width="10%" class="middle">
+				<p>This soccer ball costs $1.05 (1 dollar and 5 cents). How can you pay for it?</p>
+				<div class="middle">
+					<img src="assets/nickel.png"   alt="1 cent coin"  align="middle">
+					X
+					<input type="text" id="spinner4n" name="spinner4n" size="1" max="100" min="1" />
+					<br>
+					<img src="assets/loonie.png"   alt="1 cent coin"  align="middle">
+					X
+					<input type="text" id="spinner4l" name="spinner4l" size="1" max="100" min="1" />
+					<br>
+					<input type="submit" value="Submit" name="answer" id="submit4">
+				</div>
+			</div>
+			<hr>
+			<div id="question5">
+				<img src="assets/superman.png"   alt="1 cent coin"  align="middle" class="middle">
+				<p>This cool Superman sticker costs 10 cents. How can you pay for it? </p>
+				<div class="middle">
+					<img src="assets/nickel.png"   alt="10 cent coin"  align="middle" >
+					X
+					<input type="text" id="spinner5n" name="spinner5n" size="1" max="100" min="1" />
+					<input type="submit" value="Submit" name="answer" id="submit5">
+				</div>
 			</div>
 			<script src="js/practice.js"></script>
-
-		</div>
-			
+		</div><!--container-->	
 		</section>
 		<script src="js/repeatPictures.js"></script>
 		<script src="js/index.js"></script>
