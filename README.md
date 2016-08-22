@@ -1,2 +1,2 @@
-# money4kids.ca
+# moneyforkids.ca
 A website to teach kids about money. 
