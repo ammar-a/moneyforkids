@@ -1,51 +1,40 @@
 $( function()  {
 	//Build the spinners
-	inputs = ['#spinner1','#spinner2p', '#spinner2q','#spinner3d','#spinner4n', '#spinner4l', '#spinner5n']; 
-	spinners = [];
+	inputs = ['#spinner1c','#spinner2c', '#spinner2q','#spinner3d','#spinner4n', '#spinner4l', 
+				'#spinner5n', '#spinner6n', '#spinner6l', '#spinner7p', '#spinner7l', '#spinner8t']; // all spinner ids
+	
+	spinners = [];  // References to spinner objects stored in here
 	for (var i = 0; i < inputs.length; i++) {
 		spinners[i] = $(inputs[i]).spinner();
 	}
 
-	$(':submit').on('click', function(e) {
-		e.preventDefault();
-		var id = this.id;
-		if (id == "submit1") {
-			if (spinners[0].spinner("value") == 7) {
-				respone('correct', id);
+	answers = ['no question 0', 7, 27, 70, 105, 10, 250, 333, 1000]; // answers to questions, corresponding indices to question number
+	values = {'c' : 1, // cents
+			  'n' : 5, // nickels
+			  'd' : 10, //dimes ... etc
+			  'q' : 25,
+			  'l' : 100,
+			  't' : 200	}
+
+	$(':submit').on('click', function(e) { // function to check answer
+		question = this.id.slice(-1); // question number being answered
+		sum = 0
+		for (var i = 0; i < inputs.length; i++) { // loop through spinner ids to find corresponding spinners to question 
+			if (inputs[i].slice(-2,-1) == question) { // if spinner is for this question
+				type_of_coin = inputs[i].slice(-1); // type of coin: cents, nickels, loonies etc
+				sum += spinners[i].spinner("value") * values[type_of_coin];
 			}
-			else {
-				respone('incorrect', id)
-			}
-		} else if (id == "submit2") {
-			if (spinners[1].spinner("value") + spinners[2].spinner("value") * 25 == 27) {
-				respone('correct', id);
-			} else {
-				respone('incorrect', id)	
-			}
-		} else if (id == "submit3") {
-			if (spinners[3].spinner("value") * 10 == 70) {
-				respone('correct', id);
-			} else {
-				respone('incorrect', id)	
-			}
-		} else if (id == "submit4") {			
-			if (spinners[5].spinner("value") * 100 + spinners[4].spinner("value") * 5 == 105 ) {
-				respone('correct', id);
-			} else {
-				respone('incorrect', id)	
-			}
-		} else if (id == "submit5") {
-			if (spinners[6].spinner("value") * 5 == 10 ) {
-				respone('correct', id);
-			} else {
-				respone('incorrect', id)	
-			}
-			window.scrollTo(0,document.body.scrollHeight);
 		}
-	})
+		if (sum == answers[question]) {
+			respone('correct', this.id);
+		} else {
+			respone('incorrect', this.id);
+		}
+	});
 
 	function respone(reply, question_number) {
-		$("#"+question_number).next().remove();
+
+		$("#" + question_number).next().remove(); //Remove any previous response
 		if (reply == 'correct') {
 			$("<p style='color:blue'>GOOD JOB &#10004;</p>").insertAfter('#' + question_number).hide().fadeIn('slow');
 		} else {
