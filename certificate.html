@@ -5,13 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="A website to help kids learn about money!">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	</head>
 	<body>
 		<header>	
-			<a id="logo" href="#">Money4Kids &#127809; &copy;</a>
+			<a id="logo" href="http://moneyforkids.ca"><h1>MoneyForKids &#127809; &copy;</h1></a>
 			<a id="email" href="mailto:ammar.akhtar.01@gmail.com">Feedback</a>
 		</header>
 		<nav>
@@ -22,12 +24,13 @@
 		<section id="container">
 			<div id="content"> <!--Ajax loads content in here-->
 				<p>Unlock your certificate by anwering this question:</p>
-				<img src="assets/ironman.png" style="max-width: 90%;" class="middle" id="ironman">
+				<img src="assets/ironman.png" style="max-width: 90%;" class="middle" id="ironman"><!--overriding some conflicting css, in the neatest way I found possible-->
 				<p>This awesome Iron Man figure costs $8.43 (8 dollars and 43 cents), how can you pay for it?</p>
-				<div class="middle" style="width:auto;" id="final-question">
+				<div class="middle" style="width:auto;" id="final-question"> 
 					<img src="assets/penny.png" height="10%" 	width="10%"  alt="a penny"   />
 					X
-					<input type="text" id="spinnerCP" name="spinnerCP" size="1" />
+					<input type="text" id="spinnerCP" name="spinnerCP" size="1" /> 
+					<!--the input names are of format spinner[question number][currency initial, c for cents etc]-->
 					<br>
 					<img src="assets/nickel.png"  height="10%" 	width="10%" alt="a nickel "   />
 					X

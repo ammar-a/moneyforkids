@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="A website to help kids learn about money!">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -12,13 +13,13 @@
 	</head>
 	<body>
 		<header>	
-			<a id="logo" href="#">Money4Kids &#127809; &copy;</a>
+			<a id="logo" href="http://moneyforkids.ca"><h1>MoneyForKids &#127809; &copy;</h1></a>
 			<a id="email" href="mailto:ammar.akhtar.01@gmail.com">Feedback</a>
 		</header>
 		<nav>
-			<a href="index.html" class="current">Learn</a>
+			<a href="index.html" class="current">Learn</a> 
 			<a href="practice.html">Practice</a>
-			<a href="certificate.html">Certificate</a>
+			<a href="certificate.html" >Certificate</a>
 		</nav>
 		<section id="container">
 			<div id="content"> <!--Ajax loads content in here-->
@@ -32,7 +33,7 @@
 				 
 				<p>There are 6 different coins in total. This is the 5 cents coin, it is also called a nickel:</p>
 				<img src="assets/nickel.png"  alt="5 cents coin"	class="middle" 	height="10%" 	width="10%" /> 
-				<p class="repeat times5">It is the same as having 5 of the 1 cent coins:</p>
+				<p class="repeat times5">It is the same as having 5 of the 1 cent coins:</p> <!-- The repeating coins are dynamically inserted-->
 				<hr />
 				
 				<p>Here is the 10 cent coin, also called a dime:</p>
@@ -61,7 +62,7 @@
 				<p>Each of which are equal to a 100 cents, in total making 500 cents.</p>
 				<hr />
 			</div>
-		</section>
+		</section>s
 		<script src="js/repeatPictures.js"></script>
 		<script src="js/index.js"></script>
 		<script>
