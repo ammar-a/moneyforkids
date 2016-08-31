@@ -14,18 +14,17 @@ a {
 	color: red;
 }
 
-#logo {
-	font-weight: bold;
+#logo h1 {
 	font-size: 1.1em;
-
+    display: inline-block;
+    margin: 0px;
 }
 
 #email {
-	display: inline-block;
 	float: right;
 }
 
-nav div {
+nav a {
 	/* positioning */
 	display: inline-block;
 	box-sizing: border-box;
@@ -42,20 +41,20 @@ nav div {
 
 	font-family: 'Droid Sans', impact, serif;
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 3vw;
 	overflow: hidden;
 }
 
-nav div:hover, nav .current {
+nav a:hover, nav .current {
 	background-color: black;
 	border: 2px dashed white;
 }
 
 nav {
-	width: 100%;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
+
 }
 
 .middle {
@@ -152,7 +151,7 @@ input[type="submit"]:hover, button:hover {
 }
 
 @media screen and (max-width: 480px) {
-    nav div {
+    nav a {
     	font-size: 17px;
     	width: 30%;
     }
@@ -209,6 +208,7 @@ input[type="submit"]:hover, button:hover {
 @media print {
 
     @page {size: landscape}
+
 
     #print, #print * {
         visibility: visible;
