@@ -1,7 +1,7 @@
 $( function()  {
 	//Build the spinners
 	inputs = ['#spinner1c','#spinner2c', '#spinner2q','#spinner3d','#spinner4n', '#spinner4l', 
-				'#spinner5n', '#spinner6n', '#spinner6l', '#spinner7p', '#spinner7l', '#spinner8t']; // all spinner ids
+				'#spinner5n', '#spinner6q', '#spinner6l', '#spinner7c', '#spinner7l', '#spinner8t']; // all spinner ids
 	
 	spinners = [];  // References to spinner objects stored in here
 	for (var i = 0; i < inputs.length; i++) {
@@ -29,6 +29,10 @@ $( function()  {
 			respone('correct', this.id);
 		} else {
 			respone('incorrect', this.id);
+		}
+
+		if (question == 8) {
+			window.scrollTo(0,document.body.scrollHeight);
 		}
 	});
 
