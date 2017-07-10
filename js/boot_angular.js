@@ -7,4 +7,4 @@ angular.element(function() {
   angular.bootstrap(document, ['myApp']);
 });
 
-$route.reload();
+$window.location.reload();
