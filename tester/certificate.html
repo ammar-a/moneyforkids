@@ -14,7 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
-	<header>	
+	<header>
 		<a id="logo" href="http://moneyforkids.ca"><h1>MoneyForKids &#127809; &copy;</h1></a>
 		<a id="email" href="mailto:ammar.akhtar.01@gmail.com">Feedback</a>
 	</header>
@@ -28,10 +28,10 @@
 			<p>Unlock your certificate by anwering this question:</p>
 			<img src="assets/ironman.png" style="max-width: 90%;" class="middle" id="ironman"><!--overriding some conflicting css, in the neatest way I found possible-->
 			<p>This awesome Iron Man figure costs $8.43 (8 dollars and 43 cents), how can you pay for it?</p>
-			<div class="middle" style="width:auto;" id="final-question"> 
+			<div class="middle" style="width:auto;" id="final-question">
 				<img src="assets/penny.png" height="10%" 	width="10%"  alt="a penny"   />
 				X
-				<input type="text" id="spinnerCP" name="spinnerCP" size="1" /> 
+				<input type="text" id="spinnerCP" name="spinnerCP" size="1" />
 				<!--the input names are of format spinner[question number][currency initial, c for cents etc]-->
 				<br>
 				<img src="assets/nickel.png"  height="10%" 	width="10%" alt="a nickel "   />
@@ -64,7 +64,7 @@
 				<input type="submit" name="answer" id="submitC" value="Submit" />
 			</div><!--final question-->
 			<hr>
-			<div ng-app>
+			<div ng-app ng-controller="MyController">
 				<label for="certificate-name">Enter your name here:</label>
 				<input type="text" id="certificate-name" ng-model="name" readonly placeholder="Locked!&#128274;" />
 				<p></p>
@@ -81,7 +81,6 @@
 	<script src="js/certificate.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/ui-spinner-behaviour.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
