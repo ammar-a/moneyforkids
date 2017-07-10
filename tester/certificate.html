@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn Money for Kids! &#127809;</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A website to help kids learn about money!">
+	<meta name="keywords" content="learn, kids, money, dollars, cents">
+	<meta name="author" content="Ammar Akhtar">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+	<header>	
+		<a id="logo" href="http://moneyforkids.ca"><h1>MoneyForKids &#127809; &copy;</h1></a>
+		<a id="email" href="mailto:ammar.akhtar.01@gmail.com">Feedback</a>
+	</header>
+	<nav>
+		<a href="index.html">Learn</a>
+		<a href="practice.html">Practice</a>
+		<a href="certificate.html" class="current">Certificate</a>
+	</nav>
+	<section id="container">
+		<div id="content"> <!--Ajax loads content in here-->
+			<p>Unlock your certificate by anwering this question:</p>
+			<img src="assets/ironman.png" style="max-width: 90%;" class="middle" id="ironman"><!--overriding some conflicting css, in the neatest way I found possible-->
+			<p>This awesome Iron Man figure costs $8.43 (8 dollars and 43 cents), how can you pay for it?</p>
+			<div class="middle" style="width:auto;" id="final-question"> 
+				<img src="assets/penny.png" height="10%" 	width="10%"  alt="a penny"   />
+				X
+				<input type="text" id="spinnerCP" name="spinnerCP" size="1" /> 
+				<!--the input names are of format spinner[question number][currency initial, c for cents etc]-->
+				<br>
+				<img src="assets/nickel.png"  height="10%" 	width="10%" alt="a nickel "   />
+				X
+				<input type="text" id="spinnerCN" name="spinnerCN" size="1" />
+				<br>
+				<img src="assets/dime.png" height="10%" 	width="10%"  alt="a dime"   />
+				X
+				<input type="text" id="spinnerCD" name="spinnerD" size="1" />
+				<br>
+				<img src="assets/quarter.png"  height="10%" 	width="10%" alt="a quarter "   />
+				X
+				<input type="text" id="spinnerCQ" name="spinnerCQ" size="1" />
+				<br>
+				<img src="assets/loonie.png"  height="10%" 	width="10%" alt="a toonie "   />
+				X
+				<input type="text" id="spinnerCL" name="spinnerCL" size="1" />
+				<br>
+				<img src="assets/toonie.png" id="toonie" height="10%" 	width="10%"  alt="a toonie "   />
+				X
+				<input type="text" id="spinnerCT" name="spinnerCT" size="1" />
+				<br>
+				<div id="five">
+					<img src="assets/bill5.png"  height="10%" 	width="10%" alt="a $5 bill"   id="bill-certificate" />
+					X
+					<input type="text" id="spinnerCB" name="spinnerCB" size="1" />
+					<br>
+				</div>
+				<br>
+				<input type="submit" name="answer" id="submitC" value="Submit" />
+			</div><!--final question-->
+			<hr>
+			<div ng-app>
+				<label for="certificate-name">Enter your name here:</label>
+				<input type="text" id="certificate-name" ng-model="name" readonly placeholder="Locked!&#128274;" />
+				<p></p>
+				<div id="print">
+					<img src="assets/certificate.gif" class="middle" id="certificate">
+					<span class="middle" id="user-name">{{ name }}</span>
+				</div>
+				<p>You are now able to print the certificate!</p>
+				<button id="print-button">Print!</button>
+			</div><!--ng-app-->
+			<hr>
+		</div><!--content-->
+	</section>
+	<script src="js/certificate.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/ui-spinner-behaviour.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-82416349-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
