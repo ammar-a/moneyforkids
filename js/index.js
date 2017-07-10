@@ -21,7 +21,6 @@ $( function() {
 
     } else if (url.slice(-16) == "certificate.html") {
       $.getScript("js/certificate.js");
-      $.getScript("http://code.angularjs.org/snapshot/angular.js");
       $.getScript("js/boot_angular.js");
       $.getScript("js/ui-spinner-behaviour.js");
     } else {
