@@ -21,9 +21,8 @@ $( function() {
 
     } else if (url.slice(-16) == "certificate.html") {
       $.getScript("js/certificate.js");
+      $.getScript("js/boot_angular.js");
       $.getScript("js/ui-spinner-behaviour.js");
-      $('#angular').remove(); // Angular does not play well with $.getScript tags
-      $('<script id="angular" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>').insertAfter('section'); // Reload the script
     } else {
         $.getScript("js/repeatPictures.js");
     }
