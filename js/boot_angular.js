@@ -6,3 +6,5 @@ angular.module('myApp', [])
 angular.element(function() {
   angular.bootstrap(document, ['myApp']);
 });
+
+$route.reload();
