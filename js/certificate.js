@@ -20,6 +20,18 @@ $( function() {
 		} else {
 			$("<p style='color:red' id='answer'>Nice Try! But your answer is not correct!</p>").insertAfter('#submitC').hide().fadeIn('slow'); // feedback for wrong answer
 		}
+		var reply = $('#answer');
+		var difference = (reply.parent().next().offset().top) -  ($(window).scrollTop() + $(window).innerHeight());
+		// .parent().parent().next brings us to <hr> element separating questions
+
+		// var difference is the difference in pixels, between the response and the end of user's screen
+		// if the respnose is below the end of user's screen, scroll the screen down
+
+		if(difference > - 5){ // <hr> not fully in view
+
+			$("html, body").animate({ scrollTop: $(window).scrollTop() + difference + 5}, "slow");
+			// scroll down to the <hr> indicating end of question. (+5 pixels to make the <hr> fully visible).
+		}
 	})
 	$('#print-button').on('click', function() {
 		if ($("#certificate-name").attr("placeholder") == "My Name") {

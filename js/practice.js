@@ -2,7 +2,7 @@ $( function()  {
 	//Build the spinners
 	inputs = ['#spinner1c','#spinner2c', '#spinner2q','#spinner3d','#spinner4n', '#spinner4l', 
 				'#spinner5n', '#spinner6q', '#spinner6l', '#spinner7c', '#spinner7l', '#spinner8t']; // all spinner ids
-	
+
 	spinners = [];  // References to spinner objects stored in here
 	for (var i = 0; i < inputs.length; i++) {
 		spinners[i] = $(inputs[i]).spinner();
@@ -30,10 +30,6 @@ $( function()  {
 		} else {
 			respone('incorrect', this.id);
 		}
-
-		if (question == 8) {
-			window.scrollTo(0,document.body.scrollHeight);
-		}
 	});
 
 	function respone(reply, question_number) {
@@ -43,6 +39,19 @@ $( function()  {
 			$("<p style='color:blue'>GOOD JOB &#10004;</p>").insertAfter('#' + question_number).hide().fadeIn('slow');
 		} else {
 			$("<p style='color:red'>Nice Try! But your answer is not correct!</p>").insertAfter('#' + question_number).hide().fadeIn('slow');
+		}
+
+		var reply = $('#' + question_number).next();
+		var difference = (reply.parent().parent().next().offset().top) -  ($(window).scrollTop() + $(window).innerHeight());
+		// .parent().parent().next brings us to <hr> element separating questions
+
+		// var difference is the difference in pixels, between the response and the end of user's screen
+		// if the respnose is below the end of user's screen, scroll the screen down
+
+		if(difference > - 5){ // <hr> not fully in view
+
+			$("html, body").animate({ scrollTop: $(window).scrollTop() + difference + 5}, "slow");
+			// scroll down to the <hr> indicating end of question. (+5 pixels to make the <hr> fully visible).
 		}
 	}
 });

@@ -28,9 +28,4 @@ $( function() {
         $.getScript("js/repeatPictures.js");
     }
   });
-  if ($('nav a')[2].scrollWidth - $('nav a').innerWidth() > 5 ) { // Check if nav bar needs to be bigger 
-      //Text has over-flowed
-      $('nav a').css('width', '40%'); // stack the tabs, for smaller phone screens
-      $('nav a').css('font-size', '0.5em');
-  }
 });
