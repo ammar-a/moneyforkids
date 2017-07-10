@@ -1,0 +1,38 @@
+@page {size: landscape}
+
+
+#print, #print * {
+    visibility: visible;
+}
+body {
+    width: 960px;
+    margin: 50px auto;
+}
+#print {
+    position: relative;
+}
+
+#print span {
+    left: 50%;
+    margin-left: -200px;
+}
+
+#final-question {
+    display: none;
+}
+
+nav {
+    display: none;
+}
+
+p {
+    display: none;
+}
+
+img:not(#certificate) {
+    display: none;
+}
+
+header, label, input, button, hr {
+    display: none;
+}
