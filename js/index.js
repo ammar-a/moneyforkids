@@ -1,5 +1,5 @@
 $( function() {
-   
+
     $.ajaxSetup({
       cache: true // faster scripts
     });
@@ -11,7 +11,7 @@ $( function() {
     $('nav a.current').removeClass('current');         // Clear current indicator
     $(this).addClass('current');                       // New current indicator
 
-    $('#content').remove(); 
+    $('#content').remove();
     $('#container').load(url + " #content").hide().fadeIn(1500); // Load content with AJAX
 
 
